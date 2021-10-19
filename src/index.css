@@ -1,0 +1,204 @@
+:root {
+  --primary-color: #ccc;
+  --secondary-color: #0079FE;
+  --third-color: #225DAD;
+  --primary-backgroundColor: #141C2F;
+  --secondary-backgroundColor: #1F2A48;
+  --third-backgroundColor: #141C2F;
+}
+
+.light {
+  --primary-color: #141C2F;
+  --secondary-color: #153c66;
+  --third-color: #08172e;
+  --primary-backgroundColor: #f2f2f2;
+  --secondary-backgroundColor: #818899;
+  --third-backgroundColor: #c5d3e0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-backgroundColor);
+  color: var(--primary-color);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-size: 1rem;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.app {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo h1 {
+  font-size: 1.2rem;
+}
+
+.search {
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding: 5px;
+  margin: 20px 0px;
+  background-color: var(--secondary-backgroundColor);
+  border-radius: 10px; 
+}
+
+.search__icon button {
+  color: var(--third-color);
+  cursor: initial;
+}
+
+.search__input {
+  flex: 1;
+}
+
+.search__input input {
+  width: 100%;
+  padding: .5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  outline: none;
+  font-size: .9rem;
+}
+
+.search__input input::placeholder {
+  color: var(--primary-color);
+}
+
+.search__button button {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  transition: all .4s ease;
+}
+.search__button button:hover {
+  background-color: var(--third-color);
+}
+
+.user {
+  background-color: var(--secondary-backgroundColor);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user__profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user__avatar img {
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+}
+
+@media screen and (min-width: 768px) {
+  .user__data {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+
+  .user__info {
+    margin-left: 100px;
+  }
+
+  .search__input input {
+    font-size: 1rem;
+  }
+
+}
+
+.user__nameName {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.user__nameUsername {
+  font-size: .8rem;
+  padding: 5px 0px 10px 0px;
+  color: var(--secondary-color);
+}
+
+.user__createdAt {
+  font-size: .8rem;
+}
+
+.user__bio {
+  font-size: .9rem;
+}
+
+.user__features {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--third-backgroundColor);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+
+.user__features span {
+  font-size: .8rem;
+}
+
+.user__links {
+  line-height: 2.5;
+}
+
+.user__links a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+p[disabled],
+p[disabled] > * {
+  color: rgb(95, 92, 92);
+  cursor: initial;
+}
+
+@media screen and (min-width: 768px) {
+  .user__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .twitter {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+
+}
