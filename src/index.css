@@ -35,6 +35,7 @@ body {
   color: var(--primary-color);
   height: 100vh;
   overflow: hidden;
+  transition: all .4s ease-in;
 }
 
 .btn {
