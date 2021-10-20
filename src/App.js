@@ -36,7 +36,7 @@ const App = () => {
     };
 
     getUser();
-  }, [userToSearch, setUser]);
+  }, [userToSearch, setUser, setChecking]);
 
   return (
     <div className='app'>
