@@ -15,7 +15,9 @@ const User = () => {
             <p className='user__nameName'>{user?.name}</p>
             <p className='user__nameUsername'>@{user?.login}</p>
           </div>
-          <p className='user__createdAt'>{user?.created_at}</p>
+          <p className='user__createdAt'>
+            Joined {new Date(user?.created_at).toDateString()}
+          </p>
         </div>
       </div>
       <div className='user__info'>
@@ -37,19 +39,52 @@ const User = () => {
         </div>
 
         <div className='user__links'>
-          <p className='location'>
-            <i className='fas fa-map-marker-alt'></i> {user?.location}
-          </p>
-          <p className='website'>
-            <i className='fas fa-link'></i> <a href='#!'>{user?.blog}</a>
-          </p>
-          <p className='twitter'>
-            <i className='fab fa-twitter'></i>{' '}
-            <a href='#!'>{user?.twitter_username}</a>
-          </p>
-          <p className='company'>
-            <i className='fas fa-building'></i> @{user?.company}
-          </p>
+          {user.location ? (
+            <p className='location'>
+              <i className='fas fa-map-marker-alt'></i> {user?.location}
+            </p>
+          ) : (
+            <p disabled className='location'>
+              <i className='fas fa-map-marker-alt'></i> Not avalaible
+            </p>
+          )}
+
+          {user.blog ? (
+            <p className='website'>
+              <i className='fas fa-link'></i> <a href='#!'>{user?.blog}</a>
+            </p>
+          ) : (
+            <p disabled className='website'>
+              <i className='fas fa-link'></i> <a href='#!'>Not available</a>
+            </p>
+          )}
+
+          {user.twitter_username ? (
+            <p className='twitter'>
+              <i className='fab fa-twitter'></i>{' '}
+              <a
+                href={`https://twitter.com/${user?.twitter_username}`}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                {user?.twitter_username}
+              </a>
+            </p>
+          ) : (
+            <p disabled className='twitter'>
+              <i className='fab fa-twitter'></i> <a href='#!'>Not avalaible</a>
+            </p>
+          )}
+
+          {user.company ? (
+            <p className='company'>
+              <i className='fas fa-building'></i> {user?.company}
+            </p>
+          ) : (
+            <p disabled className='company'>
+              <i className='fas fa-building'></i> Not avalaible
+            </p>
+          )}
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { UserContext } from '../context/UserContext';
 
 const Search = () => {
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState('');
   const { setUserToSearch } = useContext(UserContext);
 
   const handleChange = (e) => {
